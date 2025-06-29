@@ -23,9 +23,9 @@ function App() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-900 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p>Loading...</p>
         </div>
       </div>
@@ -34,7 +34,7 @@ function App() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         {isSignUp ? (
           <SignUpForm onToggleMode={() => setIsSignUp(false)} />
         ) : (
@@ -50,11 +50,11 @@ function App() {
 
   if (monitoringLoading) {
     return (
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-gray-50">
         <DashboardHeader project={selectedProject} onBack={() => setSelectedProject(null)} />
         <div className="flex items-center justify-center h-96">
-          <div className="text-white text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
+          <div className="text-gray-900 text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <p>Loading monitoring data...</p>
           </div>
         </div>
@@ -65,7 +65,7 @@ function App() {
   const latestMetrics = metrics[metrics.length - 1];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       <DashboardHeader project={selectedProject} onBack={() => setSelectedProject(null)} />
       
       <div className="container mx-auto px-4 py-8">
@@ -156,20 +156,20 @@ function App() {
         {/* No Data State */}
         {metrics.length === 0 && errors.length === 0 && (
           <div className="text-center py-12">
-            <Server className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-400 mb-2">No monitoring data yet</h3>
+            <Server className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">No monitoring data yet</h3>
             <p className="text-gray-500 mb-6">
               Install the monitoring package in your Laravel application to start collecting data.
             </p>
-            <div className="bg-gray-800 rounded-lg p-4 max-w-2xl mx-auto">
-              <h4 className="text-lg font-medium text-white mb-3">Quick Setup:</h4>
+            <div className="bg-white rounded-lg p-4 max-w-2xl mx-auto border border-gray-200 shadow-sm">
+              <h4 className="text-lg font-medium text-gray-900 mb-3">Quick Setup:</h4>
               <div className="text-left space-y-2">
-                <p className="text-gray-300">1. Install the package in your Laravel app:</p>
-                <code className="block bg-gray-900 text-green-400 p-2 rounded text-sm">
+                <p className="text-gray-700">1. Install the package in your Laravel app:</p>
+                <code className="block bg-gray-100 text-green-600 p-2 rounded text-sm border">
                   composer require your-package/laravel-monitor
                 </code>
-                <p className="text-gray-300">2. Add your API key to .env:</p>
-                <code className="block bg-gray-900 text-green-400 p-2 rounded text-sm">
+                <p className="text-gray-700">2. Add your API key to .env:</p>
+                <code className="block bg-gray-100 text-green-600 p-2 rounded text-sm border">
                   PRODUCTION_MONITOR_API_KEY={selectedProject.api_key}
                 </code>
               </div>

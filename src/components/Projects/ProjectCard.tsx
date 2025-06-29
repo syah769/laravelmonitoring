@@ -21,40 +21,40 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active': return 'bg-green-500';
-      case 'inactive': return 'bg-gray-500';
-      default: return 'bg-gray-500';
+      case 'inactive': return 'bg-gray-400';
+      default: return 'bg-gray-400';
     }
   };
 
   return (
-    <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-200 group">
+    <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-200 group shadow-sm">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
             <Globe className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white">{project.name}</h3>
-            <p className="text-sm text-gray-400">{project.url}</p>
+            <h3 className="text-lg font-semibold text-gray-900">{project.name}</h3>
+            <p className="text-sm text-gray-600">{project.url}</p>
           </div>
         </div>
         
         <div className="relative">
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+            className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
           >
             <MoreVertical className="w-4 h-4" />
           </button>
           
           {showMenu && (
-            <div className="absolute right-0 top-full mt-2 w-48 bg-gray-700 rounded-lg border border-gray-600 shadow-lg z-10">
+            <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg border border-gray-200 shadow-lg z-10">
               <button
                 onClick={() => {
                   onEdit(project);
                   setShowMenu(false);
                 }}
-                className="w-full px-4 py-2 text-left text-gray-300 hover:text-white hover:bg-gray-600 flex items-center gap-2 rounded-t-lg"
+                className="w-full px-4 py-2 text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-2 rounded-t-lg"
               >
                 <Edit className="w-4 h-4" />
                 Edit Project
@@ -64,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   onDelete(project);
                   setShowMenu(false);
                 }}
-                className="w-full px-4 py-2 text-left text-red-400 hover:text-red-300 hover:bg-gray-600 flex items-center gap-2 rounded-b-lg"
+                className="w-full px-4 py-2 text-left text-red-600 hover:text-red-700 hover:bg-gray-50 flex items-center gap-2 rounded-b-lg"
               >
                 <Trash2 className="w-4 h-4" />
                 Delete Project
@@ -76,28 +76,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <div className="space-y-3 mb-4">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-400">Status</span>
+          <span className="text-sm text-gray-600">Status</span>
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`} />
-            <span className="text-sm text-white capitalize">{project.status}</span>
+            <span className="text-sm text-gray-900 capitalize">{project.status}</span>
           </div>
         </div>
         
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-400">API Key</span>
+          <span className="text-sm text-gray-600">API Key</span>
           <div className="flex items-center gap-2">
             <Key className="w-4 h-4 text-gray-400" />
-            <code className="text-xs text-gray-300 bg-gray-700 px-2 py-1 rounded">
+            <code className="text-xs text-gray-700 bg-gray-100 px-2 py-1 rounded">
               {project.api_key.substring(0, 8)}...
             </code>
           </div>
         </div>
         
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-400">Created</span>
+          <span className="text-sm text-gray-600">Created</span>
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-gray-400" />
-            <span className="text-sm text-gray-300">
+            <span className="text-sm text-gray-700">
               {formatDistanceToNow(new Date(project.created_at), { addSuffix: true })}
             </span>
           </div>
@@ -105,10 +105,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {project.last_ping && (
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-400">Last Ping</span>
+            <span className="text-sm text-gray-600">Last Ping</span>
             <div className="flex items-center gap-2">
-              <Activity className="w-4 h-4 text-green-400" />
-              <span className="text-sm text-gray-300">
+              <Activity className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-gray-700">
                 {formatDistanceToNow(new Date(project.last_ping), { addSuffix: true })}
               </span>
             </div>

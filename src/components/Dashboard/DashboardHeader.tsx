@@ -16,28 +16,28 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ project, onBac
   };
 
   return (
-    <div className="bg-gray-800 border-b border-gray-700 px-6 py-4">
+    <div className="bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <button
             onClick={onBack}
-            className="text-gray-400 hover:text-white transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
           <div>
-            <h1 className="text-xl font-semibold text-white">{project.name}</h1>
-            <p className="text-sm text-gray-400">{project.url}</p>
+            <h1 className="text-xl font-semibold text-gray-900">{project.name}</h1>
+            <p className="text-sm text-gray-600">{project.url}</p>
           </div>
         </div>
         
         <div className="flex items-center gap-2">
-          <button className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors">
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
             <Settings className="w-5 h-5" />
           </button>
           <button
             onClick={handleSignOut}
-            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
+            className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <LogOut className="w-5 h-5" />
           </button>

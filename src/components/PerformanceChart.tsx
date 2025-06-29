@@ -27,31 +27,32 @@ export const PerformanceChart: React.FC<PerformanceChartProps> = ({
   };
 
   return (
-    <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-      <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-        <Activity className="w-5 h-5 text-blue-400" />
+    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+        <Activity className="w-5 h-5 text-blue-500" />
         {title}
       </h3>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
             <XAxis 
               dataKey="timestamp" 
               tickFormatter={formatTime}
-              stroke="#9CA3AF"
+              stroke="#6B7280"
               fontSize={12}
             />
             <YAxis 
-              stroke="#9CA3AF"
+              stroke="#6B7280"
               fontSize={12}
             />
             <Tooltip 
               contentStyle={{
-                backgroundColor: '#1F2937',
-                border: '1px solid #374151',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #E5E7EB',
                 borderRadius: '8px',
-                color: '#F9FAFB'
+                color: '#111827',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
               }}
               formatter={(value: any) => [`${value}${unit}`, title]}
               labelFormatter={(label) => formatTime(label)}

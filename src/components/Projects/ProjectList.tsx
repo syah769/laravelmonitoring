@@ -62,9 +62,9 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onSelectProject }) => 
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-900 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p>Loading projects...</p>
         </div>
       </div>
@@ -72,13 +72,13 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onSelectProject }) => 
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-white mb-2">Your Projects</h1>
-            <p className="text-gray-400">Manage and monitor your Laravel applications</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Your Projects</h1>
+            <p className="text-gray-600">Manage and monitor your Laravel applications</p>
           </div>
           <button
             onClick={() => setShowModal(true)}
@@ -97,7 +97,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onSelectProject }) => 
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Search projects..."
             />
           </div>
@@ -106,8 +106,8 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onSelectProject }) => 
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
           <div className="text-center py-12">
-            <FolderOpen className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-400 mb-2">
+            <FolderOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">
               {projects.length === 0 ? 'No projects yet' : 'No projects found'}
             </h3>
             <p className="text-gray-500 mb-6">
