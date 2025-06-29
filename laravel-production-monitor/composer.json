@@ -1,10 +1,10 @@
 {
-    "name": "syah769/laravel-production-monitor",
+    "name": "syah769/laravelmonitoring",
     "description": "Professional Laravel package for production monitoring with real-time analytics, error tracking, and performance insights",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "monitoring", "analytics", "performance", "error-tracking", "dashboard", "metrics"],
-    "homepage": "https://github.com/syah769/laravel-production-monitor",
+    "homepage": "https://github.com/syah769/laravelmonitoring",
     "authors": [
         {
             "name": "Syah",
