@@ -1,13 +1,15 @@
 {
-    "name": "your-company/laravel-production-monitor",
-    "description": "Professional Laravel package for production monitoring with real-time analytics",
+    "name": "your-username/laravel-production-monitor",
+    "description": "Professional Laravel package for production monitoring with real-time analytics, error tracking, and performance insights",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "monitoring", "analytics", "performance", "error-tracking"],
+    "keywords": ["laravel", "monitoring", "analytics", "performance", "error-tracking", "dashboard", "metrics"],
+    "homepage": "https://github.com/your-username/laravel-production-monitor",
     "authors": [
         {
             "name": "Your Name",
-            "email": "your.email@example.com"
+            "email": "your.email@example.com",
+            "homepage": "https://github.com/your-username"
         }
     ],
     "require": {
@@ -15,9 +17,18 @@
         "illuminate/support": "^9.0|^10.0|^11.0",
         "guzzlehttp/guzzle": "^7.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0|^10.0",
+        "orchestra/testbench": "^7.0|^8.0|^9.0"
+    },
     "autoload": {
         "psr-4": {
             "LaravelProductionMonitor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelProductionMonitor\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -26,6 +37,9 @@
                 "LaravelProductionMonitor\\ProductionMonitorServiceProvider"
             ]
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "stable",
     "prefer-stable": true
